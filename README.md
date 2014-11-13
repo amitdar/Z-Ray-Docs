@@ -5,6 +5,7 @@ This document will describe the Z-Ray extensions API concepts, how to use and su
 
 ## Extension Structure
 A Z-Ray extension is comprised of two main components:
+
 1. A `zray.php` file - the zray extension include file, which is expected to be located in the root of the extension directory.
 2. Other files, such as view scripts, JavaScript and PHP components.
 
