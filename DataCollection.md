@@ -9,7 +9,7 @@ The `zray.php` is the file to use to implement the Z-Ray extension storage routi
 ## zrayExtension
 Class for declaring a new extension. Serves as the main API for defining trace actions and metadata. This class can be instantiated for as many extensions as necessary.
 
-**NOTE:** By default, ZRayExtension is disabled, meaning that all future calls to ‘traceFunction’ or ‘traceFile’ will be queued until the extension is enabled.
+**NOTE:** By default, ZRayExtension is disabled, meaning that all future calls to 'traceFunction' or 'traceFile' will be queued until the extension is enabled.
 
 ```php
 <?php
@@ -33,7 +33,7 @@ As mentioned earlier, a ZRayExtension is allocated disabled - this means that no
 To enable it, one must do one of the following:
 
 1. Explicitly call to `$zre->setEnabled()` - this call enables ZRayExtension unconditionally
-2. Pass true to the ZRayExtension constructor’s second argument
+2. Pass true to the ZRayExtension constructor's second argument
 3. Enable it asynchronously by using the method: `$zre->setEnabledAfter` (see next section)
 
 
@@ -49,13 +49,13 @@ function onFunctionEnter($context, &$storage) {}
 function onFunctionLeave($context, &$storage) {}
 
 // Create new extension - disabled
-$zre = new ZRayExtension(“ZendFramework2”);
+$zre = new ZRayExtension("ZendFramework2");
 
-// Trace the ‘triggerListeners’ function
-$zre->traceFunction(‘Zend\EventManager\EventManager::triggerListeners’, ‘onFunctionEnter’, ‘onFunctionLeave’);
+// Trace the 'triggerListeners' function
+$zre->traceFunction('Zend\EventManager\EventManager::triggerListeners', 'onFunctionEnter', 'onFunctionLeave');
 
-// start tracing only when ‘Mage::run()’ is called
-$zre->setEnabledAfter(‘Mage::run’);
+// start tracing only when 'Mage::run()' is called
+$zre->setEnabledAfter('Mage::run');
 ?>
 ```
 
@@ -82,7 +82,7 @@ Note that patterns are compared against concrete method calls - a method overrid
 $zre->traceFunction('super::foo', function(){echo 'enter';}, function(){});
 ?>
 ```
-…. and in index.php
+... and in index.php
 
 ```php
 <?php
@@ -118,7 +118,7 @@ this | The $this context of a method. Will be null for global or lambda function
 returnValue | The function's return value
 locals | the functions variables, as they were at the end of the function. Variables can be accessed like this: $context['locals']['myLocalVariable'] (note the missing $ sign from the variable name).
 timesCalled | The number which the current function called
-durationInclusive | The duration of the function include it’s sub childrens
+durationInclusive | The duration of the function include it's sub childrens
 durationExclusive | The duration of the function itself
 CalledFromFile | The filename which the function was called
 CalledFromLine | The file line which the function was called
@@ -141,13 +141,13 @@ This method accepts any parameter and stores it as the extension's metadata arra
 
 This medium can be useful for passing configuration hints or other details to your viewscript that were retrieved during the application request's execution.
 
-You can use the unique key ‘logo’ to set the default logo for your extension. This is done by passing a full path to the logo file, for example:
+You can use the unique key 'logo' to set the default logo for your extension. This is done by passing a full path to the logo file, for example:
 
 ```php
 <?php
 $zre->setMetadata(array(
 	'logo' => __DIR__ . DIRECTORY_SEPARATOR . 'logo.png',
-	‘foo’ => ‘bar’,
+	'foo' => 'bar',
 ));
 ?>
 ```

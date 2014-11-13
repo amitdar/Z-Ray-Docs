@@ -106,20 +106,20 @@ We need to update the panel configurations (Module.php) and add javascript hooki
 ```php
 public function config() {
   return array(
-    ‘extension’ => array(‘name’ => ‘zrayDemo’ ),
-      ‘defaultPanels’ => array(
-        ‘myDefaultPanel’ => false
+    'extension' => array('name' => 'zrayDemo' ),
+      'defaultPanels' => array(
+        'myDefaultPanel' => false
       ),
-      ‘panels’ => array(
-        ‘demo’ => array(
-        ‘display’     => true,
-        ‘logo’        => ‘logo.png’,
-        ‘menuTitle’ 	=> ‘Custom Panel’,
-        ‘panelTitle’	=> ‘Custom Panel’,
+      'panels' => array(
+        'demo' => array(
+        'display'     => true,
+        'logo'        => 'logo.png',
+        'menuTitle' 	=> 'Custom Panel',
+        'panelTitle'	=> 'Custom Panel',
 
         // control search, pagination and report
-        ‘searchId’ 	=> 'demo-extension-search', // unique id 
-        ‘pagerId’	  => 'demo-extension-pager',  // unique id 
+        'searchId' 	=> 'demo-extension-search', // unique id 
+        'pagerId'	  => 'demo-extension-pager',  // unique id 
       ),
     ),
   );
@@ -186,18 +186,18 @@ And the JavaScript code is
 var maintable = zray.createGeneralTreeTable(storage, jQuery('#<?php echo $tableParams['tableId']; ?>'));
 maintable.setColumns([
 {
-  label: ‘Name’,
-  propertyName: ‘name’,
+  label: 'Name',
+  propertyName: 'name',
   width: '20%'
 },
 {
-  label: ‘Age’,
-  propertyName: ‘value’,
+  label: 'Age',
+  propertyName: 'value',
   width: '40%'
 },
 {
-  label: ‘Kids’,
-  propertyName: ‘count’,
+  label: 'Kids',
+  propertyName: 'count',
   width: '40%'
 }
 ]);
@@ -210,39 +210,39 @@ This is done by adding a resources section to use panel description at Module.ph
 ```php
 public function config() {
   return array(
-    ‘extension’ => array(‘name’ => ‘zrayDemo’ ),
-      ‘defaultPanels’ => array(
-        ‘myDefaultPanel’ => false
+    'extension' => array('name' => 'zrayDemo' ),
+      'defaultPanels' => array(
+        'myDefaultPanel' => false
       ),
-      ‘panels’ => array(
-        ‘demo’ => array(
-        ‘display’    => true,
-        ‘logo’       => ‘logo.png’,
-        ‘menuTitle’ 	=> ‘Custom Panel’,
-        ‘panelTitle’	=> ‘Custom Panel’,
+      'panels' => array(
+        'demo' => array(
+        'display'    => true,
+        'logo'       => 'logo.png',
+        'menuTitle' 	=> 'Custom Panel',
+        'panelTitle'	=> 'Custom Panel',
 
         // control search, pagination and report
-        ‘searchId’ 	=> 'demo-extension-search', // unique id 
-        ‘pagerId’	=> 'demo-extension-pager',  // unique id 
+        'searchId' 	=> 'demo-extension-search', // unique id 
+        'pagerId'	=> 'demo-extension-pager',  // unique id 
       ),
-     ‘resources’  => array(
-  	  ‘chartsJS’   => ‘charts.js’ 
-       ‘chartsCSS’   => ‘charts.css’ 
+     'resources'  => array(
+  	  'chartsJS'   => 'charts.js' 
+       'chartsCSS'   => 'charts.css' 
       )
     ),
   );
 }
 ```
 
-Once this is done, the files content will be exposed using the $params[‘resources’] variable in the panel display.
+Once this is done, the files content will be exposed using the $params['resources'] variable in the panel display.
 
 ```html
 <script type="text/javascript">
-<?php echo $params[‘resources’] [‘chartJS’]; ?>
+<?php echo $params['resources'] ['chartJS']; ?>
 </script>
 
 <style>
-<?php echo $params[‘resources’] [‘chartCSS’]; ?>
+<?php echo $params['resources'] ['chartCSS']; ?>
 <style>
 ```
 
@@ -270,9 +270,9 @@ We start by declaring that we want to use a summary table by adding the containe
 ```php
 <?php
 $tableParams = array(
-   'tableId'      		=> ‘unique-main-table-id',
+   'tableId'      		=> 'unique-main-table-id',
    'tableWidth'   		=> '3',
-   'summaryTableId‘  		=> 'unique-summary-table-id ',
+   'summaryTableId'  		=> 'unique-summary-table-id ',
    'summaryTableWidth'  	=> '1',
 );
 ?>
@@ -285,7 +285,7 @@ And the JavaScript structure should look like this:
 var summaryTable = zray.createSummaryTable(storage, jQuery('#<?php echo $tableParams['summaryTableId']; ?>'));
 
 // set the columns structure
-summaryTable.setColumns(…);
+summaryTable.setColumns(...);
 
 // set by which column the user choice will filter
 summaryTable.setFilterColumn('name');
