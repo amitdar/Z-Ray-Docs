@@ -1,4 +1,4 @@
-Z-Ray Extension API
+Z-Ray Data Collection
 ==========
 
 ## Extension Structure
