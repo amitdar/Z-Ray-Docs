@@ -17,10 +17,30 @@ A view script may be added to the extension to create a custom display.
 ## Code Examples
 You can find code examples for all the content in this document (and more!) in our GitHub account http://github.com/zend-server-extensions. You can find an example Z-Ray extension here: http://github.com/zend-server-extensions/Z-Ray-Samples. 
 
-<br/><br/><br/><br/>
+<br/><br/>
 
+## Table of Contents
 
-## Main Subjects
-### [Data Collection](DataCollection.md)
-### [Data Display](DataDisplay.md)
-### [Z-Ray Widgets](Widgets.md)
+- [Z-Ray Data Collection](#)
+	- [Z-Ray Extension Include File (zray.php) and the ZrayExtension class](#)
+	- [zrayExtension](#)
+	- [zrayExtension::setEnabled()](#)
+	- [zrayExtension::setEnabledAfter($initFunctionsName);](#)
+	- [zrayExtension::traceFunction($pattern, $onenter, $onleave);](#)
+	- [zrayExtension::untraceFunction($functionName);](#)
+	- [zrayExtension::traceFile($filename, $onenter, $onleave);](#)
+	- [zrayExtension::setMetadata($metadata);](#)
+- [Z-Ray Data Display](#)
+	- [Automatically generated panels](#)
+	- [ExtensionName](#)
+	- [Z-Ray Extension Module.php](#)
+	- [Z-Ray extension viewscript](#)
+- [Z-Ray Widgets](#)
+	- [Z-Ray data handling](#)
+	- [Z-Ray table widget](#)
+	- [Z-Ray search and pagination widget](#)
+	- [Z-Ray tree widget](#)
+	- [Z-Ray general tree widget](#)
+	- [Z-Ray resources](#)
+	- [Z-Ray tabs](#)
+	- [Z-Ray summary table](#)
